@@ -120,8 +120,7 @@ if meal_type is ('Dinner') and Variety is('Both'):
         st.write(i)        
 
 
-#selected_food = st.selectbox('What would you like to Order?', food_list)
-selected_food = tx.text('What would you like to Order?', 'Order1')
+selected_food = st.selectbox('What would you like to Order?', food_list)
 if st.button('Recommend'):
     recommendations = recommend(selected_food)
     st.subheader("Also try this")
