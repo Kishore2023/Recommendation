@@ -57,7 +57,7 @@ OrderdinnerBoth = pd.DataFrame(dinnerBoth_list)
 #--------------------------------------------------------------
 
 food_list = pickle.load(open('Order1.pkl','rb'))
-food_list = food_list['Order1'].values
+#food_list = food_list['Order1'].values
 anime = pd.DataFrame(food_list)
 similarity = pickle.load(open('similarity.pkl','rb'))
 
@@ -121,7 +121,7 @@ if meal_type is ('Dinner') and Variety is('Both'):
         st.write(i)        
 
 
-selected_food = st.selectbox('What would you like to Order?',food_list)
+selected_food = st.selectbox('What would you like to Order?', anime)
 if st.button('Recommend'):
     recommendations = recommend(selected_food)
     st.subheader("Also try this")
