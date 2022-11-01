@@ -67,7 +67,7 @@ def recommend(food):
 
     recommended_foods= []
     for i in food_list:
-        recommended_foods.append(data.iloc[i[0]].Order1)
+        recommended_foods.append(data.iloc[i[0]].OrderName)
     return recommended_foods
     
 
