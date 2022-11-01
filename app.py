@@ -57,7 +57,7 @@ OrderdinnerBoth = pd.DataFrame(dinnerBoth_list)
 food_list = pickle.load(open('Order1.pkl','rb'))
 #food_list = food_list['Order1'].values
 data = pd.DataFrame(food_list)
-food_list1 = data.iloc[:,14]
+food_list1 = data.iloc[:,13]
 similarity = pickle.load(open('similarity.pkl','rb'))
 
 def recommend(food):
