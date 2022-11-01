@@ -120,7 +120,7 @@ if meal_type is ('Dinner') and Variety is('Both'):
         st.write(i)        
 
 
-selected_food = st.selectbox('What would you like to Order?', anime)
+selected_food = st.selectbox('What would you like to Order?', data)
 if st.button('Recommend'):
     recommendations = recommend(selected_food)
     st.subheader("Also try this")
