@@ -5,7 +5,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-st.title('Food Recommendation')
+st.title('PREFERR RECOMMENDATION FOOD')
 
 #breakfast = pd.read_excel("C:\\Users\\gan8k\\OneDrive - Contoso\\Documents\\Kishore - Personal\\Data Science\\Recommendation Engine Project\\Github1- Streamlit\\Dataset\\BreakfastVeg.xlsx")
 #pickle.dump(breakfast, open('BreakfastVeg.pkl','wb'))
@@ -123,9 +123,9 @@ if meal_type is ('Dinner') and Variety is('Both'):
         st.write(i)        
 
 
-selected_food = st.selectbox('What would you like to Order?', food_list)
+selected_food = st.selectbox('PLEASE CAN YOU CONFIRM YOUR FIRST ORDER?', food_list)
 if st.button('Recommend'):
     recommendations = recommend(selected_food)
-    st.subheader("Also try this")
+    st.subheader("CAN YOU ALSO TRY THE BELOW RECOMMENDED FOOD")
     for i in recommendations:
         st.write(i)
