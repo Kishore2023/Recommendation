@@ -56,7 +56,7 @@ OrderdinnerBoth = pd.DataFrame(dinnerBoth_list)
 
 #--------------------------------------------------------------
 
-pickle.dump(anime_index, open('Order1.pkl','wb'))
+#pickle.dump(anime_index, open('Order1.pkl','wb'))
 food_list = pickle.load(open('Order1.pkl','rb'))
 # food_list = food_list['DishName'].values
 data = pd.DataFrame(food_list)
