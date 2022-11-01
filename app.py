@@ -5,7 +5,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-st.title('PREFERR RECOMMENDATION FOOD')
+st.title('FOOD RECOMMENDATION TO CUSTOMER')
 
 #breakfast = pd.read_excel("C:\\Users\\gan8k\\OneDrive - Contoso\\Documents\\Kishore - Personal\\Data Science\\Recommendation Engine Project\\Github1- Streamlit\\Dataset\\BreakfastVeg.xlsx")
 #pickle.dump(breakfast, open('BreakfastVeg.pkl','wb'))
