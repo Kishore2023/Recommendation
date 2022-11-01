@@ -57,7 +57,7 @@ OrderdinnerBoth = pd.DataFrame(dinnerBoth_list)
 #--------------------------------------------------------------
 
 food_list = pickle.load(open('Order1.pkl','rb'))
-food_list = food_list['Order1'].values
+#food_list = food_list['Order1'].values
 anime = pd.DataFrame(food_list)
 similarity = pickle.load(open('similarity.pkl','rb'))
 
