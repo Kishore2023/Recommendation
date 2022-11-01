@@ -56,9 +56,7 @@ OrderdinnerBoth = pd.DataFrame(dinnerBoth_list)
 
 #--------------------------------------------------------------
 
-#pickle.dump(anime_index, open('Order1.pkl','wb'))
 food_list = pickle.load(open('Order1.pkl','rb'))
-# food_list = food_list['DishName'].values
 anime = pd.DataFrame(food_list)
 similarity = pickle.load(open('similarity.pkl','rb'))
 
@@ -92,32 +90,32 @@ if meal_type is ('Dinner') and Variety is('Vegetarian'):
         st.write(i)        
         
 if meal_type is ('Breakfast') and Variety is('NonVegetarian'):
-    food_break3 = OrderbreakfastNV.Breakfast
+    food_break3 = OrderbreakfastNV.Breakfast1
     for i in food_break3:
         st.write(i)
 
 if meal_type is ('Lunch') and Variety is('NonVegetarian'):
-    food_break4 = OrderlunchNV.Lunch
+    food_break4 = OrderlunchNV.Lunch1
     for i in food_break4:
         st.write(i)
         
 if meal_type is ('Dinner') and Variety is('NonVegetarian'):
-    food_break5 = OrderdinnerNV.Dinner
+    food_break5 = OrderdinnerNV.Dinner1
     for i in food_break5:
         st.write(i)         
 
 if meal_type is ('Breakfast') and Variety is('Both'):
-    food_break6 = OrderbreakfastBoth.Breakfast
+    food_break6 = OrderbreakfastBoth.Breakfast2
     for i in food_break6:
         st.write(i)
 
 if meal_type is ('Lunch') and Variety is('Both'):
-    food_break7 = OrderlunchBoth.Lunch
+    food_break7 = OrderlunchBoth.Lunch2
     for i in food_break7:
         st.write(i)
         
 if meal_type is ('Dinner') and Variety is('Both'):
-    food_break8 = OrderdinnerBoth.Dinner
+    food_break8 = OrderdinnerBoth.Dinner2
     for i in food_break8:
         st.write(i)        
 
