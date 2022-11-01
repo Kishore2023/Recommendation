@@ -61,13 +61,13 @@ data = pd.DataFrame(food_list)
 similarity = pickle.load(open('similarity.pkl','rb'))
 
 def recommend(food):
-    food_index = data[data["Order1"] == food].index[14]
+    food_index = data[data["OrderName"] == food].index[0]
     distances = similarity[food_index]
     food_list = sorted(list(enumerate(distances)), reverse = True, key = lambda x:x[1])[1:11] 
 
     recommended_foods= []
     for i in food_list:
-        recommended_foods.append(data.iloc[i[14]].Order1)
+        recommended_foods.append(data.iloc[i[0]].Order1)
     return recommended_foods
     
 
