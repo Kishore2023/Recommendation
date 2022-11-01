@@ -75,47 +75,47 @@ meal_type = st.selectbox('Select Meal Type',('Select Meal Type','Breakfast','Lun
 Variety = st.selectbox('Choose Veg or Non-Veg or Both', ('Select','Vegetarian','NonVegetarian', 'Both'))
 
 if meal_type is ('Breakfast') and Variety is('Vegetarian'):
-    food_break = Orderbreakfast.Breakfast
+    food_break = Orderbreakfast.Order1
     for i in food_break:
         st.write(i)
 
 if meal_type is ('Lunch') and Variety is('Vegetarian'):
-    food_break1 = Orderlunch.Lunch
+    food_break1 = Orderlunch.Order1
     for i in food_break1:
         st.write(i)
         
 if meal_type is ('Dinner') and Variety is('Vegetarian'):
-    food_break2 = Orderdinner.Dinner
+    food_break2 = Orderdinner.Order1
     for i in food_break2:
         st.write(i)        
         
 if meal_type is ('Breakfast') and Variety is('NonVegetarian'):
-    food_break3 = OrderbreakfastNV.Breakfast1
+    food_break3 = OrderbreakfastNV.Order1
     for i in food_break3:
         st.write(i)
 
 if meal_type is ('Lunch') and Variety is('NonVegetarian'):
-    food_break4 = OrderlunchNV.Lunch1
+    food_break4 = OrderlunchNV.Order1
     for i in food_break4:
         st.write(i)
         
 if meal_type is ('Dinner') and Variety is('NonVegetarian'):
-    food_break5 = OrderdinnerNV.Dinner1
+    food_break5 = OrderdinnerNV.Order1
     for i in food_break5:
         st.write(i)         
 
 if meal_type is ('Breakfast') and Variety is('Both'):
-    food_break6 = OrderbreakfastBoth.Breakfast2
+    food_break6 = OrderbreakfastBoth.Order1
     for i in food_break6:
         st.write(i)
 
 if meal_type is ('Lunch') and Variety is('Both'):
-    food_break7 = OrderlunchBoth.Lunch2
+    food_break7 = OrderlunchBoth.Order1
     for i in food_break7:
         st.write(i)
         
 if meal_type is ('Dinner') and Variety is('Both'):
-    food_break8 = OrderdinnerBoth.Dinner2
+    food_break8 = OrderdinnerBoth.Order1
     for i in food_break8:
         st.write(i)        
 
