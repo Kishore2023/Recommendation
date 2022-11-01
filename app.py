@@ -55,20 +55,19 @@ dinnerBoth_list = pickle.load(open('DinnerBoth.pkl','rb'))
 OrderdinnerBoth = pd.DataFrame(dinnerBoth_list)
 
 #--------------------------------------------------------------
-
 food_list = pickle.load(open('Order1.pkl','rb'))
-#food_list = food_list['Order1'].values
-anime = pd.DataFrame(food_list)
+food_list = food_list['Order1'].values
+data = pd.DataFrame(food_list)
 similarity = pickle.load(open('similarity.pkl','rb'))
 
 def recommend(food):
-    food_index = anime[anime["Order1"] == food].index[14]
+    food_index = data[data["Order1"] == food].index[0]
     distances = similarity[food_index]
     food_list = sorted(list(enumerate(distances)), reverse = True, key = lambda x:x[1])[1:11] 
 
     recommended_foods= []
     for i in food_list:
-        recommended_foods.append(anime.iloc[i[14]].Order1)
+        recommended_foods.append(data.iloc[i[0]].Order1)
     return recommended_foods
     
 
