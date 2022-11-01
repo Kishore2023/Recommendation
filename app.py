@@ -1,8 +1,11 @@
 import streamlit as st
+from PIL import Image
+img = Image.open('Food recommendation image.png')
+st.set_page_config(page_title='Food Recommendation', page_icon = img)
 import pickle
 import pandas as pd
 
-st.title('Food Recommendation')
+#st.title('Food Recommendation')
 
 #breakfast = pd.read_excel("C:\\Users\\gan8k\\OneDrive - Contoso\\Documents\\Kishore - Personal\\Data Science\\Recommendation Engine Project\\Github1- Streamlit\\Dataset\\BreakfastVeg.xlsx")
 #pickle.dump(breakfast, open('BreakfastVeg.pkl','wb'))
