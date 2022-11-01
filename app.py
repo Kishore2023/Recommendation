@@ -62,7 +62,7 @@ anime = pd.DataFrame(food_list)
 similarity = pickle.load(open('similarity.pkl','rb'))
 
 def recommend(food):
-    food_index = anime[anime["Order1"] == food].index[0]
+    food_index = anime[anime["Order1"] == food].index[14]
     distances = similarity[food_index]
     food_list = sorted(list(enumerate(distances)), reverse = True, key = lambda x:x[1])[1:11] 
 
