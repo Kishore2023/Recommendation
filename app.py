@@ -67,7 +67,7 @@ def recommend(food):
 
     recommended_foods= []
     for i in food_list:
-        recommended_foods.append(data.iloc[i[13]].Order1)
+        recommended_foods.append(data.iloc[i[14]].Order1)
     return recommended_foods
     
 
@@ -120,7 +120,7 @@ if meal_type is ('Dinner') and Variety is('Both'):
         st.write(i)        
 
 
-selected_food = st.selectbox('What would you like to Order?', data)
+selected_food = st.selectbox('What would you like to Order?', food_list)
 if st.button('Recommend'):
     recommendations = recommend(selected_food)
     st.subheader("Also try this")
