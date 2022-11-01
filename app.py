@@ -9,7 +9,6 @@ st.title('Food Recommendation')
 breakfast_list = pickle.load(open('BreakfastVeg.pkl','rb'))
 Orderbreakfast = pd.DataFrame(breakfast_list)
 
-
 #lunch = pd.read_excel("C:\\Users\\gan8k\\OneDrive - Contoso\\Documents\\Kishore - Personal\\Data Science\\Recommendation Engine Project\\Github1- Streamlit\\Dataset\\LunchVeg.xlsx")
 #pickle.dump(lunch, open('LunchVeg.pkl','wb'))
 lunch_list = pickle.load(open('LunchVeg.pkl','rb'))
@@ -58,6 +57,7 @@ OrderdinnerBoth = pd.DataFrame(dinnerBoth_list)
 food_list = pickle.load(open('Order1.pkl','rb'))
 #food_list = food_list['Order1'].values
 data = pd.DataFrame(food_list)
+food_list1 = data.iloc[:,14]
 similarity = pickle.load(open('similarity.pkl','rb'))
 
 def recommend(food):
@@ -120,7 +120,7 @@ if meal_type is ('Dinner') and Variety is('Both'):
         st.write(i)        
 
 
-selected_food = st.selectbox('What would you like to Order?', food_list)
+selected_food = st.selectbox('What would you like to Order?', food_list1)
 if st.button('Recommend'):
     recommendations = recommend(selected_food)
     st.subheader("Also try this")
