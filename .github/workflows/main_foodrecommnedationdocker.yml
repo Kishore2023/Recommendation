@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://mcr.microsoft.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_abb4c1f233454a37a36f8bb43bec9657 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_7299381f41ac4ac199f9d21114c735e3 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_bffecc4bb1764b60b74d42a302fb0362 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_b8c6e6f878fc4784bf6632c1e4fa044d }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_abb4c1f233454a37a36f8bb43bec9657 }}/appsvc/staticsite:${{ github.sha }}
+        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_bffecc4bb1764b60b74d42a302fb0362 }}/appsvc/staticsite:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'foodrecommnedationdocker'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a8da2a02d8aa4fd7b151564dc99325ac }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_abb4c1f233454a37a36f8bb43bec9657 }}/appsvc/staticsite:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a8d3daa62a364de591e2abeb7d1ea84e }}
+        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_bffecc4bb1764b60b74d42a302fb0362 }}/appsvc/staticsite:${{ github.sha }}'
