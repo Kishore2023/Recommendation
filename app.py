@@ -1,9 +1,13 @@
-import streamlit as st
+
 #from PIL import Image
 #img = Image.open('Food recommendation image.png')
 #st.set_page_config(page_title='Food Recommendation', page_icon = img)
 import pickle
+import streamlit as st
 import pandas as pd
+from streamlit import logger as _logger
+from streamlit import config
+import toml
 
 st.title('FOOD RECOMMENDATION TO CUSTOMER')
 
@@ -57,7 +61,7 @@ dinnerBoth_list = pickle.load(open('DinnerBoth.pkl','rb'))
 OrderdinnerBoth = pd.DataFrame(dinnerBoth_list)
 
 #--------------------------------------------------------------
-food_list = pickle.load(open('Order1.pkl','rb'))
+food_list = pickle.load(open('Firstorder.pkl','rb'))
 #food_list = food_list['Order1'].values
 data = pd.DataFrame(food_list)
 #food_list1 = data.iloc[:,13]
@@ -77,51 +81,50 @@ def recommend(food):
 meal_type = st.selectbox('Select Meal Type',('Select Meal Type','Breakfast','Lunch','Dinner'))
 Variety = st.selectbox('Choose Veg or Non-Veg or Both', ('Select','Vegetarian','NonVegetarian', 'Both'))
 
-if meal_type is ('Breakfast') and Variety is('Vegetarian'):
+if meal_type == ('Breakfast') and Variety ==('Vegetarian'):
     food_break = Orderbreakfast.Order1
     for i in food_break:
         st.write(i)
 
-if meal_type is ('Lunch') and Variety is('Vegetarian'):
+if meal_type == ('Lunch') and Variety ==('Vegetarian'):
     food_break1 = Orderlunch.Order1
     for i in food_break1:
         st.write(i)
         
-if meal_type is ('Dinner') and Variety is('Vegetarian'):
+if meal_type == ('Dinner') and Variety ==('Vegetarian'):
     food_break2 = Orderdinner.Order1
     for i in food_break2:
         st.write(i)        
         
-if meal_type is ('Breakfast') and Variety is('NonVegetarian'):
+if meal_type == ('Breakfast') and Variety ==('NonVegetarian'):
     food_break3 = OrderbreakfastNV.Order1
     for i in food_break3:
         st.write(i)
 
-if meal_type is ('Lunch') and Variety is('NonVegetarian'):
+if meal_type == ('Lunch') and Variety ==('NonVegetarian'):
     food_break4 = OrderlunchNV.Order1
     for i in food_break4:
         st.write(i)
         
-if meal_type is ('Dinner') and Variety is('NonVegetarian'):
+if meal_type == ('Dinner') and Variety ==('NonVegetarian'):
     food_break5 = OrderdinnerNV.Order1
     for i in food_break5:
         st.write(i)         
 
-if meal_type is ('Breakfast') and Variety is('Both'):
+if meal_type == ('Breakfast') and Variety ==('Both'):
     food_break6 = OrderbreakfastBoth.Order1
     for i in food_break6:
         st.write(i)
 
-if meal_type is ('Lunch') and Variety is('Both'):
+if meal_type == ('Lunch') and Variety ==('Both'):
     food_break7 = OrderlunchBoth.Order1
     for i in food_break7:
         st.write(i)
         
-if meal_type is ('Dinner') and Variety is('Both'):
+if meal_type ==('Dinner') and Variety ==('Both'):
     food_break8 = OrderdinnerBoth.Order1
     for i in food_break8:
         st.write(i)        
-
 
 selected_food = st.selectbox('PLEASE CAN YOU CONFIRM YOUR FIRST ORDER?', food_list)
 if st.button('Recommend'):
